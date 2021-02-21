@@ -18,12 +18,9 @@ occurences = []
 # extract the row with strings to sort and convert to series
 df = pd.read_csv('data/bereinigt.csv')
 
-#print(df['Grund'].str.count(categories[0]).sum())
-
 for i in range(len(categories)):
     occurences.append(df['Grund'].str.count(categories[i]).sum())
 
 plt.barh(categories, occurences)
-plt.title('grund')
-plt.tight_layout()
+plt.title('Velonutzung vor und nach Corona')
 plt.show()
